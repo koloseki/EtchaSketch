@@ -5,4 +5,28 @@ body{
     color: #fff;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
+
+
+.board{
+  display: grid;
+  margin: 10rem;
+  grid-template: repeat(50, 16px);
+  width: 500px;
+  height: 500px;
+}
+
+
+
+
+input{
+    background-color: #fff;
+    color: #333;
+    border: 0.5px solid #333;
+}
+
+
+
+
