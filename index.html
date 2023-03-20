@@ -14,19 +14,36 @@
 
 
     <div class="buttons">
-        <button id="reset">Reset</button>        <!--button to reset the board -->
-        <button id="black" onclick=`color = "black"`>Black</button>        <!--button to change the color to black -->
-        <button id="rainbow">Rainbow</button>    <!--button to change the color to rainbow -->
-        <button id="eraser" onclick=`color = "white"`>Eraser</button>      <!--button to change the color to white -->
-        <button id="grid" onclick="toggleGrid()">Toggle Grid</button>          <!--button to change the grid size -->
+        Color:
+        <input type="color" id="head" name="head"
+           value="ff0000">       
+        <button id="black" onclick="changeColor (`black`)">
+            Black
+        </button>       
+        <button id="rainbow" onclick="changeColor(`random`)">
+            Rainbow
+        </button>    
+        <button id="eraser" onclick="changeColor(`white`)">
+            Eraser
+        </button> 
+        <button id="reset" onclick="clearAll()">
+            Clear
+        </button>
+        Toggle Grid:      
+        <label class="switch" >
+            <input type="checkbox" id="checkbox"  onchange="toggleGrid(this)" >
+            <span class="slider round"></span>
+        </label>          
             <input
               type="range"
               placeholder="Size of Board"
               min="2" max="64"
               value="16"
               onchange="changeSize(this.value)"
+              
             />
     </div>
+
     <div class="board"></div>                   <!--the actual board where the user draws -->
         
 

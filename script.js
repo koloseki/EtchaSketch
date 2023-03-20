@@ -35,8 +35,24 @@ function colorSquare() {
   }
 }
 
-function toggleGrid(){
-  let board = document.querySelector(".board div");
-  board.style.border = "3px solid black";
-  console.log(board.style.border);
+function changeColor(choice) {
+  color = choice;
+}
+
+document.querySelector('range').innerHTML = val
+document.querySelector('range').innerHTML = post.join('<br/>');
+
+
+function toggleGrid(status){
+  let board = document.querySelector(".board");
+  let squares = board.querySelectorAll("div");
+  if(status.checked){
+    squares.forEach((div) => div.style.border = "0.01rem solid black");
+  }else{
+    squares.forEach((div) => div.style.border = "none");
+  }
+}
+
+function clearAll(){
+  changeSize()
 }
