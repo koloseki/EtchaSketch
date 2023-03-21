@@ -35,12 +35,22 @@ function colorSquare() {
   }
 }
 
+const colorPicker = document.querySelector('#head');
+colorPicker.addEventListener('input', (e) => {
+  color = e.target.value;
+});
+
 function changeColor(choice) {
   color = choice;
 }
 
-document.querySelector('range').innerHTML = val
-document.querySelector('range').innerHTML = post.join('<br/>');
+function resetBoard() {
+  let board = document.querySelector(".board");
+  let squares = board.querySelectorAll("div");
+  squares.forEach((div) => (div.style.backgroundColor = "white"));
+}
+
+
 
 
 function toggleGrid(status){
@@ -53,6 +63,3 @@ function toggleGrid(status){
   }
 }
 
-function clearAll(){
-  changeSize()
-}
