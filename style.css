@@ -1,102 +1,219 @@
 body{
-    background-color: #333;
+    background-color: whitesmoke;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    color: #fff;
+    color: #333;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:100%;
+    overflow: hidden;
+}
+
+header{
+    display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    padding-top: 3vh;
+    color: black;
+    height: 10vh;
+}
+    
+
+
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  height: 80vh;
+  
+}
+
+input{
+  background-color: #fff;
+  color: #333;
+  border: none; 
+  width: 3vw; 
+  height: 5vh;  
+  cursor: pointer;
 }
 
 
-.board{
-  display: grid;
-  align-self: center;
-  margin: 10rem;
-  grid-template: repeat(50, 16px);
-  height:60vh;
-  width:60vh;
-}
 
 .buttons{
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2vh;
+  width: 8vw;
+  
 }
 
-
-input{
-    background-color: #fff;
-    color: #333;
-    border: 0.2px solid #333;
-}
-
-/*slider section to look at */ 
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
+.sliderRange{
+  width: 8vw;
+  background-color: mediumaquamarine;
+  overflow: hidden;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
 }
 
-.slider:before {
+button{
+  background-color: mediumaquamarine; 
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #333;
+  transition: 0.3s;
+}
+
+
+button:focus{
+  background-color: #333;
+  transition: 0.3s;
+}
+
+#reset:hover{
+  background-color: #333;
+}
+
+
+#reset:focus{
+  background-color: mediumaquamarine;
+}
+
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  background-color: mediumaquamarine;
+  padding: 0.3rem;
+  gap: 1rem;
+  color: white;
+  height: 6vh;
+}
+
+.board{
+  display: grid;
+  align-self: center;
+  margin: 10rem;
+  grid-template: repeat(50, 16px);
+  height:50vh;
+  width:50vh;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+  0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+/*toggle switch*/
+
+.toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 62px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #707070;
+  transition: background-color ease 0.3s;
+}
+
+.toggle:before {
+  content: "on off";
+  display: block;
   position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  left: 2px;
+  top: 2px;
   border-radius: 50%;
+  font: 10px/28px Helvetica;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-indent: -22px;
+  word-spacing: 37px;
+  color: #fff;
+  text-shadow: -1px -1px rgba(0,0,0,0.15);
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+}
+
+.toggle:checked {
+  background-color: mediumaquamarine;
+}
+
+.toggle:checked:before {
+  left: 32px;
 }
 
 
+/*github spin*/
+
+.gitLink{
+  margin-top: 1vh;
+}
+
+
+.imgOfGithub{
+  transition: transform .7s ease-in-out;
+}
+
+.imgOfGithub:hover{
+  transform: rotate(360deg);
+  
+}
+
+
+/*to add */
+/*media queries*/
+
+@media screen and (max-width: 768px) {
+  
+
+  body{
+    overflow: auto;
+  };
+
+
+
+  
+  main{
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .buttons{
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }
+
+
+}

@@ -23,6 +23,8 @@ function changeSize(input) {
   if (input >= 2 && input <= 64) {
     populateBoard(input);
   } 
+
+  document.querySelector("#boardSize").textContent = input + " x " + input;
 }
 
 function colorSquare() {
@@ -62,4 +64,5 @@ function toggleGrid(status){
     squares.forEach((div) => div.style.border = "none");
   }
 }
+
 

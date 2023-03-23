@@ -10,44 +10,54 @@
 </head>
 <body>
     
+    <header>
+        <h1>Etch-a-Sketch</h1>
+    </header>
+
+    <main>
+        <div class="buttons">
+            Color:
+            <input type="color" id="head" name="head"
+            value="49ff33">       
+            <button id="black" onclick="changeColor (`black`)">
+                Black
+            </button>       
+            <button id="rainbow" onclick="changeColor(`random`)">
+                Rainbow
+            </button>    
+            <button id="eraser" onclick="changeColor(`white`)">
+                Eraser
+            </button> 
+            <button id="reset" onclick="resetBoard()">
+                Clear
+            </button>
+                 
+
+           
+            Toggle Grid:
+                <input type="checkbox"  class="toggle"  onchange="toggleGrid(this)" >
+                <span class="slider round"></span>
+                
+            Num of squares:
+                <input
+                type="range"
+                class="sliderRange"
+                placeholder="Size of Board"
+                min="2" max="64"
+                value="16"
+                onchange="changeSize(this.value)"
+                />
+                <div id="boardSize">16 x 16</div>
+        </div>
+
+        <div class="board"></div>                   <!--the actual board where the user draws -->      
+    </main>
 
 
 
-    <div class="buttons">
-        Color:
-        <input type="color" id="head" name="head"
-           value="49ff33">       
-        <button id="black" onclick="changeColor (`black`)">
-            Black
-        </button>       
-        <button id="rainbow" onclick="changeColor(`random`)">
-            Rainbow
-        </button>    
-        <button id="eraser" onclick="changeColor(`white`)">
-            Eraser
-        </button> 
-        <button id="reset" onclick="resetBoard()">
-            Clear
-        </button>
-        Toggle Grid:      
-        <label class="switch" >
-            <input type="checkbox" id="checkbox"  onchange="toggleGrid(this)" >
-            <span class="slider round"></span>
-        </label>          
-            <input
-              type="range"
-              placeholder="Size of Board"
-              min="2" max="64"
-              value="16"
-              onchange="changeSize(this.value)"
-              
-            />
-    </div>
-
-    <div class="board"></div>                   <!--the actual board where the user draws -->
-        
-
-    
+    <footer>
+        Copyright &copy; koloseki <a class="gitLink"href="https://github.com/koloseki"><img class="imgOfGithub" src="img/icons8-github.svg" height="30vh" width="auto" alt="github_Link"></a>
+    </footer>
 
 
 
